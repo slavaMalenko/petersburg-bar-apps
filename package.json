@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "start": "lerna run --parallel start-dev",
+    "start-dev": "nodemon --watch src --exec 'npm run start'",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^8.1.6",
+    "nodemon": "^3.1.4"
+  }
+}
