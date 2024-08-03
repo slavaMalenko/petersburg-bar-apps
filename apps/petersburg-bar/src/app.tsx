@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
+import { Container } from '@petersburg-bar/common-ui';
 import { BrowserRouter } from 'react-router-dom';
 import { Reset } from 'styled-reset';
 
 import { Footer, Header } from './components';
 import { Router } from './routes';
-import { Container } from '@petersburg-bar/common-ui';
 
 const App: FC = () => (
     <>
