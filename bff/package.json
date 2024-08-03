@@ -1,0 +1,24 @@
+{
+  "name": "petersburg-bar-bff",
+  "version": "1.0.0",
+  "description": "petersburg-bar bff react-typescript",
+  "scripts": {
+    "start-dev": "ts-node-dev src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slavaMalenko/petersburg-bar.git"
+  },
+  "author": "Slava Malenko <malenko@vseslavno.ru>",
+  "homepage": "https://github.com/slavaMalenko/petersburg-bar#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.11",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "redis": "^4.6.15",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  }
+}

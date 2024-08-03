@@ -3,16 +3,16 @@
   "workspaces": {
     "packages": [
       "apps/*",
-      "packages/*"
+      "packages/*",
+      "bff"
     ]
   },
   "scripts": {
-    "start": "lerna run --parallel start-dev",
-    "start-dev": "nodemon --watch src --exec 'npm run start'",
+    "start-dev": "lerna run start-dev --parallel --ignore petersburg-bar-bff",
+    "start-dev-bff": "lerna run start-dev --scope petersburg-bar-bff",
     "build": "lerna run build"
   },
   "devDependencies": {
-    "lerna": "^8.1.6",
-    "nodemon": "^3.1.4"
+    "lerna": "^8.1.6"
   }
 }

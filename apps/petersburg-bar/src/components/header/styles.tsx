@@ -2,7 +2,7 @@ import { textStyles } from '@petersburg-bar/common-ui';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-import logo from './img/logo.png';
+import logo from './logo.png';
 
 import type { StyledProps } from 'styled-components';
 
