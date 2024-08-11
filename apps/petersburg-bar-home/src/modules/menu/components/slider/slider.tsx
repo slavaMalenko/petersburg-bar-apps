@@ -1,10 +1,9 @@
 import { forwardRef } from 'react';
 
-import { animationVariants } from '@petersburg-bar/common-ui';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { MMenuItem } from './item';
+import { MenuItemComponent } from './item';
 import { SliderContainer, ButtonLeft, ButtonRight, SliderContent, ContentAbsolute } from './styles';
 import { useMenu } from '../../api';
 import { useSlider, useSliderButtons } from '../../store';
@@ -31,12 +30,7 @@ export const Slider = forwardRef<HTMLDivElement>((_, ref) => {
             <SliderContent>
                 <ContentAbsolute elementsPassed={elementsPassed}>
                     {menu.map((data, index) => (
-                        <MMenuItem
-                            key={`${data?.description} ${index}`}
-                            custom={index}
-                            data={data}
-                            variants={animationVariants.appearanceOnTheTop()}
-                        />
+                        <MenuItemComponent key={`${data?.description} ${index}`} data={data} />
                     ))}
                 </ContentAbsolute>
             </SliderContent>

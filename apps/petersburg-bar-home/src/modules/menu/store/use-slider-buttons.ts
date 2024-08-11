@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { useStore } from 'zustand';
 
-import { useSliderStore } from './use-slider';
+import { sliderStore } from './use-slider';
 
 import type { Slider } from '../types';
 
@@ -13,4 +13,4 @@ export const selectIsActiveButtons = createSelector(
     }),
 );
 
-export const useSliderButtons = () => useStore(useSliderStore, selectIsActiveButtons);
+export const useSliderButtons = () => useStore(sliderStore, selectIsActiveButtons);

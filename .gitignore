@@ -1,5 +1,6 @@
 /dist
 /node_modules
 apps/**/node_modules/**
+bff/node_modules/**
 packages/**/node_modules/**
 apps/**/dist/**

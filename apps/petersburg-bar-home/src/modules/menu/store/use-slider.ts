@@ -7,7 +7,7 @@ import { useMenu } from '../api';
 
 import type { Slider } from '../types';
 
-export const useSliderStore = create<Slider>()(
+export const sliderStore = create<Slider>()(
     devtools(
         persist(
             (set, get) => ({
@@ -35,8 +35,8 @@ export const useSlider = () => {
     const { data: menu } = useMenu();
 
     useEffect(() => {
-        if (menu?.length > 0) useSliderStore.setState({ totalElements: menu.length });
+        if (menu?.length > 0) sliderStore.setState({ totalElements: menu.length });
     }, [menu]);
 
-    return useSliderStore();
+    return sliderStore();
 };

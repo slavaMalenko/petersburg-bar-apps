@@ -1,7 +1,5 @@
 import { forwardRef } from 'react';
 
-import { motion } from 'framer-motion';
-
 import { Content, Description, Img, InfoBlock, MenuItemContainer, Price, Title, Weight } from './styles';
 
 import type { MenuItem } from '../../types';
@@ -28,5 +26,3 @@ export const MenuItemComponent = forwardRef<HTMLDivElement, MenuItemData>(
         </MenuItemContainer>
     ),
 );
-
-export const MMenuItem = motion(MenuItemComponent);
