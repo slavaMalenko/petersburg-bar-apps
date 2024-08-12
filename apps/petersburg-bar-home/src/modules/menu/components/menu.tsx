@@ -1,26 +1,24 @@
 import type { FC } from 'react';
 
-import { MButton, MTitle, MWhitePlate, animationVariants } from '@petersburg-bar/common-ui';
-import { motion } from 'framer-motion';
+import { MButton, MTitle, MWhitePlate, Title, animationVariants } from '@petersburg-bar/common';
 import { useNavigate } from 'react-router-dom';
 import { css } from 'styled-components';
 
-import { MSlider } from './slider/slider';
+import { Slider } from './slider';
+import { Sale, Section, WhitePlateStyles } from './styles';
+import { useMenuSale } from '../api';
+import { useSliderGetters } from '../store';
 
 const { appearanceOnTheTop } = animationVariants;
-
-export const WhitePlateStyles = css`
-    font-size: 16px;
-    max-width: 240px;
-    margin: 40px auto 30px;
-    font-weight: 900;
-`;
 
 interface Menu {
     setActiveRoute: (route: string) => void;
 }
 
 export const Menu: FC<Menu> = ({ setActiveRoute }) => {
+    const { data: sale } = useMenuSale();
+    const { isShowDiscounts } = useSliderGetters();
+
     const navigate = useNavigate();
     const toMenu: () => void = () => {
         navigate('/menu');
@@ -28,7 +26,7 @@ export const Menu: FC<Menu> = ({ setActiveRoute }) => {
     };
 
     return (
-        <motion.section initial="hidden" viewport={{ amount: 0.15 }} whileInView="visible">
+        <Section initial="hidden" viewport={{ amount: 0.15 }} whileInView="visible">
             <MWhitePlate
                 scrollToTitle
                 $commonStyles={WhitePlateStyles}
@@ -38,7 +36,18 @@ export const Menu: FC<Menu> = ({ setActiveRoute }) => {
             />
 
             <MTitle custom={2} text="Кухня" variants={appearanceOnTheTop()} />
-            <MSlider custom={3} variants={appearanceOnTheTop()} />
+            <Slider />
+            <Sale isShown={isShowDiscounts}>
+                <Title
+                    $commonStyles={css`
+                        font-size: 25px;
+                        margin-bottom: 30px;
+                        width: 520px;
+                    `}
+                    isColorWhite={false}
+                    text={`Что-то приглянулось, но ты дома? Закажи доствку! Сегодня скидка на ${sale?.category} - ${sale?.value}!`}
+                />
+            </Sale>
             <MButton
                 center
                 $marginBottom={20}
@@ -47,6 +56,6 @@ export const Menu: FC<Menu> = ({ setActiveRoute }) => {
                 variants={appearanceOnTheTop(undefined, 0.2)}
                 onClick={toMenu}
             />
-        </motion.section>
+        </Section>
     );
 };

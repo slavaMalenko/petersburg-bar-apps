@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { Button, Title, WhitePlate, flexStyles } from '@petersburg-bar/common-ui';
+import { Button, Title, WhitePlate, flexStyles } from '@petersburg-bar/common';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 

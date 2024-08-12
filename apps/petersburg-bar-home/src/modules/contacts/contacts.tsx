@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import { MTitle, MWhitePlate, animationVariants } from '@petersburg-bar/common-ui';
+import { MTitle, MWhitePlate, animationVariants } from '@petersburg-bar/common';
 
-import { ContactsInfo } from './contactsInfo';
+import { ContactsInfo } from './contacts-info';
 import { ContactsContainer, ContactsMap, Section, WhitePlateStyles } from './styles';
 
 const { appearanceOnTheTop } = animationVariants;

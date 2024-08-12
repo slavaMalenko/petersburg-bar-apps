@@ -1,4 +1,4 @@
-import { commonStyles, flexStyles, textStyles } from '@petersburg-bar/common-ui';
+import { commonStyles, flexStyles, textStyles } from '@petersburg-bar/common';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
@@ -20,17 +20,19 @@ export const SliderContainer = styled(motion.div)`
 `;
 
 export const SliderContent = styled.div`
-    width: 1015px;
+    width: 1180px;
     height: 635px;
     position: relative;
     overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 `;
 
 export const ContentAbsolute = styled.div<{ elementsPassed: number }>`
     position: absolute;
+    margin: 0 75px;
     height: 620px;
     top: 5px;
-    left: ${({ elementsPassed }) => (elementsPassed === 8 ? 5 : (-(elementsPassed - 8) / 4) * 500)}px;
+    left: ${({ elementsPassed }) => (elementsPassed === 8 ? 0 : (-(elementsPassed - 8) / 4) * 515)}px;
     transition: all 0.3s linear;
     ${displayFlex}
     ${flexWrap}
@@ -42,7 +44,7 @@ export const Button = css`
     height: 50px;
     background: #d5621d;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 2;
     transition: all 0.2s linear;
     ${selectNone}
     ${displayFlex}
@@ -99,8 +101,7 @@ export const Price = styled.div`
 export const MenuItemContainer = styled.div`
     width: 485px;
     height: 140px;
-    margin-bottom: 15px;
-    margin-right: 20px;
+    margin: 0 15px 15px 15px;
     padding: 15px;
     ${hoverFrame};
     &:hover ${Price} {

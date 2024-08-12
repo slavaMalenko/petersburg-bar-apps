@@ -1,1 +1,1 @@
-export { TechnicalRider } from './technical-rider';
+export * from './components';

@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+import { memo, type FC } from 'react';
 
-import { animationVariants, flexStyles } from '@petersburg-bar/common-ui';
+import { animationVariants, flexStyles } from '@petersburg-bar/common';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -24,6 +24,10 @@ const Container = styled(motion.section)`
     margin: 40px 0px 65px;
 `;
 
+const RectangleImg = memo(() => (
+    <Img custom={2} drag="x" dragConstraints={{ left: 0, right: 0 }} src={Rectangle} variants={appearanceOnTheTop()} />
+));
+
 interface AboutEstablishments {
     setActiveRoute: (route: string) => void;
 }
@@ -44,13 +48,7 @@ export const AboutEstablishments: FC<AboutEstablishments> = ({ setActiveRoute })
                     setActiveRoute('/cooperation');
                 }}
             />
-            <Img
-                custom={2}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                src={Rectangle}
-                variants={appearanceOnTheTop()}
-            />
+            <RectangleImg />
             <MDescription
                 blockTitle="Туристы"
                 custom={3}

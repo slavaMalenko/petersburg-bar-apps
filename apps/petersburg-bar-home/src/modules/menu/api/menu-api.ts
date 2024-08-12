@@ -1,29 +1,34 @@
-import { useQuery } from '@tanstack/react-query';
+import { useDataQuery } from '@petersburg-bar/common';
 
 import { axiosClient } from '../../../api';
+import { sliderStore } from '../store';
 
-import type { MenuItems } from '../types';
-import type { UseQueryOptions } from '@tanstack/react-query';
-import type { AxiosError } from 'axios';
+import type { MenuItems, MenuSale } from '../types';
 
 export const getMenu = async (): Promise<MenuItems> => {
     const response = await axiosClient.get<MenuItems>('/menu');
 
     return response.data;
 };
+export const getMenuSale = async (): Promise<MenuSale> => {
+    const response = await axiosClient.get<MenuSale>('/menu/sale');
 
-export const useMenu = (options?: Omit<UseQueryOptions<MenuItems, AxiosError>, 'queryKey'>) =>
-    useQuery({
-        // Ключ для кэширования и идентификации запроса.
-        queryKey: ['menu'],
-        // Функция, которая будет выполняться для получения данных.
-        queryFn: getMenu,
-        // Определяет время в миллисекундах, в течение которого данные считаются свежими (30 секунд).
-        staleTime: 30000,
-        // Интервал, через который данные будут автоматически перезапрашиваться с сервера (30 секунд).
-        refetchInterval: 15000,
-        // Опция, позволяющая выполнять перезапрос данных даже когда приложение работает в фоновом режиме.
-        refetchIntervalInBackground: true,
-        // Разворачивает дополнительные переданные опции в конфигурацию useQuery.
-        ...options,
+    return response.data;
+};
+
+// Экземляр меню
+export const useMenu = () => useDataQuery<MenuItems>(getMenu, { queryKey: ['menu'], refetchInterval: 90000 });
+// Экземляр скидок на меню
+export const useMenuSale = () => {
+    const { elementsPassed } = sliderStore(({ elementsPassed, totalElements }) => ({
+        elementsPassed,
+        totalElements,
+    }));
+
+    return useDataQuery<MenuSale>(getMenuSale, {
+        queryKey: ['menu-sale'],
+        refetchInterval: false,
+        refetchIntervalInBackground: false,
+        enabled: elementsPassed >= 12,
     });
+};

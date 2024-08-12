@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 
+import { useScroll } from '@petersburg-bar/common';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Home from './modules';
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
             refetchOnWindowFocus: false,
@@ -14,10 +15,14 @@ const queryClient = new QueryClient({
     },
 });
 
-const App: FC<{ setActiveRoute: (route: string) => void }> = ({ setActiveRoute }) => (
-    <QueryClientProvider client={queryClient}>
-        <Home setActiveRoute={setActiveRoute} />
-    </QueryClientProvider>
-);
+const App: FC<{ setActiveRoute: (route: string) => void }> = ({ setActiveRoute }) => {
+    useScroll('petersburg-bar-home-scroll');
+
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Home setActiveRoute={setActiveRoute} />
+        </QueryClientProvider>
+    );
+};
 
 export default App;

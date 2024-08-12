@@ -1,4 +1,4 @@
-import { flexStyles, textStyles } from '@petersburg-bar/common-ui';
+import { flexStyles, textStyles } from '@petersburg-bar/common';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 

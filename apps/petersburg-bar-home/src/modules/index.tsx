@@ -4,7 +4,7 @@ import { AboutEstablishments } from './about-establishment';
 import { Contacts } from './contacts';
 import { Menu } from './menu';
 import { Preview } from './preview';
-import { TechnicalRider } from './technical-rider';
+import { TechnicalRider } from './technical-rider/components';
 
 const Home: FC<{
     setActiveRoute: (route: string) => void;

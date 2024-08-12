@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
-import { Container } from '@petersburg-bar/common-ui';
+import { Container } from '@petersburg-bar/common';
 import { BrowserRouter } from 'react-router-dom';
 import { Reset } from 'styled-reset';
 

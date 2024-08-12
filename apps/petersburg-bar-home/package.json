@@ -4,6 +4,7 @@
     "description": "petersburg-bar react-typescript",
     "scripts": {
         "start-dev": "webpack-dev-server --config webpack.dev.js",
+        "start-dev-open": "webpack-dev-server --config webpack.dev.js --open",
         "start-prod": "webpack-dev-server --config webpack.prod.js --open",
         "build-dev": "webpack --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
@@ -32,7 +33,7 @@
         "reselect": "5.1.1"
     },
     "devDependencies": {
-        "@petersburg-bar/common-ui": "*",
+        "@petersburg-bar/common": "*",
         "@petersburg-bar/eslint-config": "*",
         "@babel/core": "7.24.7",
         "@babel/preset-env": "7.24.7",

@@ -16,7 +16,7 @@ export const sliderStore = create<Slider>()(
                 moveLeft: () => {
                     const { elementsPassed } = get();
 
-                    set({ elementsPassed: elementsPassed > 8 ? elementsPassed - 4 : elementsPassed });
+                    if (elementsPassed > 8) set({ elementsPassed: elementsPassed - 4 });
                 },
                 moveRight: () => {
                     const { totalElements, elementsPassed } = get();
@@ -35,8 +35,15 @@ export const useSlider = () => {
     const { data: menu } = useMenu();
 
     useEffect(() => {
-        if (menu?.length > 0) sliderStore.setState({ totalElements: menu.length });
+        if (menu?.length) sliderStore.setState({ totalElements: menu.length });
     }, [menu]);
 
     return sliderStore();
 };
+
+// TODO если бы нужно было чистить скидки в кэше (оставляю для себя)
+// sliderStore.subscribe(({ elementsPassed }) => {
+//     if (elementsPassed === 8) {
+//         queryClient.removeQueries({ queryKey: ['menu-sale'] });
+//     }
+// });

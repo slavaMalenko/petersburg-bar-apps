@@ -1,2 +1,2 @@
 export * from './use-slider';
-export * from './use-slider-buttons';
+export * from './use-slider-getters';

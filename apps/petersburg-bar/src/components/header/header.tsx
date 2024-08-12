@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Button } from '@petersburg-bar/common-ui';
+import { Button } from '@petersburg-bar/common';
 
 import { Navigation } from './navigation';
 import { ButtonCss, Header, Logo } from './styles';

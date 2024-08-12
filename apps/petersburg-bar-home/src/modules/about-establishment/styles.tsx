@@ -1,4 +1,4 @@
-import { commonStyles, textStyles } from '@petersburg-bar/common-ui';
+import { commonStyles, textStyles } from '@petersburg-bar/common';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
@@ -7,6 +7,7 @@ const { colorWhite, fontFamilySofiaSansSemiCondensed, textAlignCenter } = textSt
 
 export const Img = styled(motion.img)`
     width: 33.3%;
+    z-index: 10000;
     ${cursorGrab}
 
     &:active {

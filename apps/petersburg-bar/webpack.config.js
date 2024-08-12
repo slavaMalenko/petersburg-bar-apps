@@ -32,7 +32,7 @@ module.exports = {
             {
                 test: /\.ts|\.tsx$/,
                 exclude: /node_modules/,
-                include: [path.resolve(__dirname, 'src'), path.resolve('../../packages/common-ui/src')],
+                include: [path.resolve(__dirname, 'src'), path.resolve('../../packages/common/src')],
                 use: [
                     {
                         loader: 'babel-loader',
