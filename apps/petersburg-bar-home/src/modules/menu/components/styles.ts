@@ -59,8 +59,8 @@ export const Sale = styled(motion.div)<{ isShown: boolean }>`
         isShown
             ? css`
                   animation:
-                      ${heightAnimation('0px', '125px')} 0.3s linear forwards,
-                      ${borderBottomAnimation('0px', '1px')} 0.3s linear forwards 0.8s,
+                      ${heightAnimation('0px', '125px')} 0.4s linear forwards,
+                      ${borderBottomAnimation('0px', '1px')} 0.3s linear forwards,
                       ${marginBottomAnimation('0', '40px')} 0.2s linear forwards 0.8s,
                       ${pulseAnimation} 0.4s ease-in-out;
               `

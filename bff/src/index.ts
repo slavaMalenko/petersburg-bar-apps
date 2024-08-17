@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { menuRouter, ridersRouter } from "./routes";
+import { errorHandler } from "./middlewares";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,8 +23,10 @@ app.use(
   })
 );
 
+// app.use(requestLogger); - оставил как пример
 app.use("/menu", menuRouter);
 app.use("/riders", ridersRouter);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
