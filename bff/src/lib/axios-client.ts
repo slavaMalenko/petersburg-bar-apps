@@ -30,5 +30,4 @@ axiosClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
 export { axiosClient };

@@ -10,7 +10,7 @@ export const sliderGetters = createSelector(
     ({ elementsPassed, totalElements }: Slider) => ({
         isActiveButtonLeft: elementsPassed > 8,
         isActiveButtonRight: elementsPassed < totalElements,
-        isShowDiscounts: elementsPassed >= 12,
+        isShowDiscounts: elementsPassed >= 12 && totalElements > 8,
     }),
 );
 

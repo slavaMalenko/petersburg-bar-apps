@@ -12,6 +12,7 @@ export const errorHandler = (
   res: Response
 ): void => {
   const { message, status = 500 } = err;
+
   logger.error(`Error: ${message}`, {
     metadata: {
       status,

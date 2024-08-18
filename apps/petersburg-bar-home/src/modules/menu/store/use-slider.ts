@@ -36,6 +36,7 @@ export const useSlider = () => {
 
     useEffect(() => {
         if (menu?.length) sliderStore.setState({ totalElements: menu.length });
+        else sliderStore.setState({ totalElements: 0 });
     }, [menu]);
 
     return sliderStore();

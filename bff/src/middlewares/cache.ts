@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { redisClient } from "../config";
 import { RedisCommandArgument } from "@redis/client/dist/lib/commands";
-import { logger } from "../lib";
+import { logger, redisClient } from "../lib";
 
 // Объявление функции для проверки кэша
 export const checkCache = (key: RedisCommandArgument) => {

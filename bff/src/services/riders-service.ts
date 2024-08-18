@@ -1,4 +1,4 @@
-import { redisClient } from "../config";
+import { redisClient } from "../lib";
 import { mockRiders, TechnicalRiders } from "../types";
 
 export const getRidersList = async (): Promise<TechnicalRiders | undefined> => {

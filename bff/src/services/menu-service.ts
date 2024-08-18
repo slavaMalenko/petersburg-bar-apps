@@ -1,16 +1,14 @@
-import { redisClient } from "../config";
 import { MenuItems, MenuSale, mockMenu } from "../types";
-import { axiosClient } from "../lib";
+import { axiosClient, getWithBreaker, redisClient } from "../lib";
 
 export const getMenuList = async (): Promise<MenuItems | undefined> => {
   try {
-    const response = await axiosClient.get<MenuItems>("/menu");
-    const data = response.data ?? mockMenu;
-
+    const response = await getWithBreaker.fire("/menu");
+    const data = response.data;
     await redisClient.setEx("menu", 60, JSON.stringify(data));
     return data;
   } catch (error) {
-    throw new Error("Failed to fetch menu list.");
+    throw error;
   }
 };
 
@@ -20,6 +18,6 @@ export const getMenuSale = async (): Promise<MenuSale | undefined> => {
     await redisClient.setEx("menu-sale", 60, JSON.stringify(sale));
     return sale;
   } catch (error) {
-    throw new Error("Failed to fetch menu sale.");
+    throw error;
   }
 };
