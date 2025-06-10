@@ -1,8 +1,8 @@
-import { commonStyles, flexStyles, textStyles } from '@petersburg-bar/common';
+import { commonStyles, flexStyles, textStyles } from '@petersburg-bar/ui';;
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-import preview_map from './img/preview_map.png';
+const preview_map = new URL('./assets/preview_map.png', import.meta.url).href;
 
 const { displayFlex, justifySpaceBetween } = flexStyles;
 const { selectNone, pointer, overflowHidden } = commonStyles;

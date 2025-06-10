@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { RetractableBlocks } from '@petersburg-bar/common';
+import { RetractableBlocks } from '@petersburg-bar/ui';;
 import styled from 'styled-components';
 
 import { ListLi, ListUl } from './styles';

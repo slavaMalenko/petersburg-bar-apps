@@ -1,8 +1,8 @@
-import { flexStyles, textStyles } from '@petersburg-bar/common';
+import { flexStyles, textStyles } from '@petersburg-bar/ui';;
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-import photo_preview from './img/photo_preview.png';
+const photo_preview = new URL('./assets/photo_preview.png', import.meta.url).href;
 
 const { displayFlex, justifySpaceBetween } = flexStyles;
 const { colorWhite, fontFamilySofiaSansSemiCondensed, textTransformUppercase } = textStyles;

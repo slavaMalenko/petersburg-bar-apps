@@ -25,7 +25,7 @@ export const Router: FC = () => {
             <Route
                 element={
                     <Suspense fallback="Loading...">
-                        <ErrorBoundary fallback={<div>Ошибка компиляции, не пугайся</div>}>
+                        <ErrorBoundary fallback={<div style={{ color: 'white' }}>Ошибка компиляции, не пугайся</div>}>
                             <Home setActiveRoute={setActiveRoute} />
                         </ErrorBoundary>
                     </Suspense>
@@ -35,7 +35,7 @@ export const Router: FC = () => {
             <Route
                 element={
                     <Suspense fallback="Loading...">
-                        <ErrorBoundary fallback={<div>Ошибка компиляции, не пугайся</div>}>
+                        <ErrorBoundary fallback={<div style={{ color: 'white' }}>Ошибка компиляции, не пугайся</div>}>
                             <Contacts />
                         </ErrorBoundary>
                     </Suspense>

@@ -9,7 +9,7 @@ const logFormat = winston.format.combine(
         timestamp: info.timestamp,
         level: info.level,
         message: info.message,
-        ...info.metadata,
+        ...(info.metadata as Record<string, any>),
       },
       null,
       2
@@ -19,10 +19,19 @@ const logFormat = winston.format.combine(
 
 // Фильтр, который возвращает только те сообщения, у которых в metadata поле context равно определённым значениям
 const cacheFilter = winston.format((info) =>
-  info.metadata && info.metadata.context === "cache" ? info : false
+  info.metadata && (info.metadata as Record<string, any>).context === "cache"
+    ? info
+    : false
+);
+const requestFilter = winston.format((info) =>
+  info.metadata && (info.metadata as Record<string, any>).context === "request"
+    ? info
+    : false
 );
 const opossumFilter = winston.format((info) =>
-  info.metadata && info.metadata.context === "opossum" ? info : false
+  info.metadata && (info.metadata as Record<string, any>).context === "opossum"
+    ? info
+    : false
 );
 
 const transports = [
@@ -58,6 +67,17 @@ const transports = [
     maxFiles: "1d",
     format: winston.format.combine(
       cacheFilter(),
+      winston.format.metadata(),
+      logFormat
+    ),
+  }),
+  // Логирование только тех сообщений, которые относятся к контексту "request"
+  new DailyRotateFile({
+    filename: "logs/request-%DATE%.log",
+    datePattern: "YYYY-MM-DD",
+    maxFiles: "1d",
+    format: winston.format.combine(
+      requestFilter(),
       winston.format.metadata(),
       logFormat
     ),

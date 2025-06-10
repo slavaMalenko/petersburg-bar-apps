@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Dividing, commonStyles, flexStyles, textStyles } from '@petersburg-bar/common';
+import { Dividing, commonStyles, flexStyles, textStyles } from '@petersburg-bar/ui';;
 import styled from 'styled-components';
 
 const { displayFlex, justifySpaceBetween } = flexStyles;

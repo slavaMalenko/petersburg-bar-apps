@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useState } from 'react';
 
-import { MTelegramIcon, MVkIcon, animationVariants, commonStyles, flexStyles } from '@petersburg-bar/common';
+import { MTelegramIcon, MVkIcon, animationVariants, commonStyles, flexStyles } from '@petersburg-bar/ui';;
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 

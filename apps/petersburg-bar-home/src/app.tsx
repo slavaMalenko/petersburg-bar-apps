@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { useScroll } from '@petersburg-bar/common';
+import { useScroll } from '@petersburg-bar/hooks';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Home from './modules';

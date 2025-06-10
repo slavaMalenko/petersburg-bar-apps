@@ -3,14 +3,18 @@
   "workspaces": {
     "packages": [
       "apps/*",
+      "tools/*",
       "packages/*",
-      "bff"
+      "server-bff"
     ]
   },
   "scripts": {
-    "start-dev": "lerna run start-dev --parallel --ignore petersburg-bar-bff",
+    "start-dev": "npm run build:all && lerna run start-dev --parallel --scope petersburg-bar-apps-*",
     "start-dev-bff": "lerna run start-dev --scope petersburg-bar-bff",
-    "build": "lerna run build"
+    "build": "npm run build:all && lerna run build",
+    "build:all": "lerna run build --scope petersburg-bar-apps-* --scope @petersburg-bar/*",
+    "build:watch": "lerna run build --parallel --scope @petersburg-bar/* -- --watch",
+    "test": "lerna run test -- --passWithNoTests"
   },
   "devDependencies": {
     "lerna": "^8.1.6"

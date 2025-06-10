@@ -1,7 +1,6 @@
 import type { FC } from 'react';
-import './index.css';
 
-import { useScroll } from '@petersburg-bar/common';
+import { useScroll } from '@petersburg-bar/hooks';;
 
 const App: FC = () => {
     useScroll('petersburg-bar-contacts-scroll');

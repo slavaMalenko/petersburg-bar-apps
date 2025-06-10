@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { MTitle, MWhitePlate, animationVariants } from '@petersburg-bar/common';
+import { MTitle, MWhitePlate, animationVariants } from '@petersburg-bar/ui';;
 
 import { ContactsInfo } from './contacts-info';
 import { ContactsContainer, ContactsMap, Section, WhitePlateStyles } from './styles';

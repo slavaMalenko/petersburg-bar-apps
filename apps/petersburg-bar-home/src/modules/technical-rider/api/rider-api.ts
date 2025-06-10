@@ -1,4 +1,4 @@
-import { useDataQuery } from '@petersburg-bar/common';
+import { useDataQuery } from '@petersburg-bar/hooks';;
 
 import { axiosClient } from '../../../api';
 
