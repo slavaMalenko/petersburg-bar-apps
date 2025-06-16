@@ -13,6 +13,7 @@ axiosClient.interceptors.response.use(
         url: response.config.url,
         method: response.config.method,
         status: response.status,
+        context: "request",
       },
     });
     return response;
@@ -20,6 +21,7 @@ axiosClient.interceptors.response.use(
   (error) => {
     logger.error("Error in axios request", {
       metadata: {
+        context: "request",
         message: error.message,
         stack: error.stack,
         config: error.config,

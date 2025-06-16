@@ -1,4 +1,4 @@
-import { textStyles } from '@petersburg-bar/common';
+import { textStyles } from '@petersburg-bar/ui';;
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 

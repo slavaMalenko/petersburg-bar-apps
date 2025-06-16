@@ -1,5 +1,10 @@
 {
   "version": "0.0.0",
   "npmClient": "npm",
-  "packages": ["apps/*", "packages/*", "bff"]
+  "packages": [
+    "apps/*",
+    "packages/*",
+    "tools/*",
+    "bff"
+  ]
 }

@@ -1,4 +1,4 @@
-import { useDataQuery } from '@petersburg-bar/common';
+import { useDataQuery } from '@petersburg-bar/hooks';;
 
 import { axiosClient } from '../../../api';
 import { sliderStore } from '../store';
@@ -18,6 +18,7 @@ export const getMenuSale = async (): Promise<MenuSale> => {
 
 // Экземляр меню
 export const useMenu = () => useDataQuery<MenuItems>(getMenu, { queryKey: ['menu'], refetchInterval: 90000 });
+
 // Экземляр скидок на меню
 export const useMenuSale = () => {
     const { elementsPassed } = sliderStore(({ elementsPassed, totalElements }) => ({

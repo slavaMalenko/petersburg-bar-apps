@@ -1,0 +1,41 @@
+{
+    "name": "@petersburg-bar/ui",
+    "version": "1.0.0",
+    "description": "petersburg-bar react-typescript ui components",
+    "main": "./src/index.ts",
+    "scripts": {
+        "dev": "concurrently \"vite build --watch\" \"vite preview\"",
+        "build": "vite build",
+        "test": "jest"
+    },
+    "keywords": [
+        "ui",
+        "components"
+    ],
+    "author": "Slava Malenko <malenko@vseslavno.ru>",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-error-boundary": "^4.0.13",
+        "react-router-dom": "^6.8.2",
+        "framer-motion": "^10.18.0",
+        "@petersburg-bar/shared-libs": "*",
+        "styled-components": "^5.3.8"
+    },
+    "devDependencies": {
+        "@petersburg-bar/eslint-config": "*",
+        "@petersburg-bar/jest-config": "*",
+        "typescript": "^5.5.3",
+        "vite": "^6.0.11",
+        "@originjs/vite-plugin-federation": "^1.3.9",
+        "@vitejs/plugin-react": "^4.3.4",
+        "type-fest": "^4.33.0",
+        "@types/styled-components": "^5.1.34"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "styled-components": "^5.3.8"
+    }
+}

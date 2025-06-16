@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { MWhitePlate, animationVariants } from '@petersburg-bar/common';
+import { MWhitePlate, animationVariants } from '@petersburg-bar/ui';;
 
 import { Concerts } from './concerts';
 import { PreviewContent, PreviewImg, PreviewShortTag, WhitePlateStyles } from './styles';

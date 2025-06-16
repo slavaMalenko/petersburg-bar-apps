@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { MTitle, animationVariants, flexStyles } from '@petersburg-bar/common';
+import { MTitle, animationVariants, flexStyles } from '@petersburg-bar/ui';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 

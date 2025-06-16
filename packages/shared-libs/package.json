@@ -1,0 +1,39 @@
+{
+  "name": "@petersburg-bar/shared-libs",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.51.21",
+    "express": "4.21.2",
+    "framer-motion": "10.18.0",
+    "react-error-boundary": "4.0.13",
+    "reselect": "5.1.1",
+    "styled-components": "5.3.8",
+    "styled-reset": "4.4.5",
+    "zustand": "4.5.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.24.7",
+    "@babel/preset-env": "7.24.7",
+    "@babel/preset-react": "7.24.7",
+    "@babel/preset-typescript": "7.24.7",
+    "@types/node": "20.14.11",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/styled-components": "5.1.34",
+    "axios": "^1.9.0",
+    "babel-loader": "9.1.3",
+    "css-loader": "6.11.0",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "5.6.0",
+    "mini-css-extract-plugin": "2.9.1",
+    "prettier": "3.3.2",
+    "style-loader": "3.3.4",
+    "ts-loader": "9.5.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.3",
+    "url-loader": "4.1.1"
+  }
+}

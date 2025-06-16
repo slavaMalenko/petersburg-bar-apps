@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Button } from '@petersburg-bar/common';
+import { Button } from '@petersburg-bar/ui';;
 
 import { Navigation } from './navigation';
 import { ButtonCss, Header, Logo } from './styles';
@@ -15,7 +15,7 @@ export const HeaderComponent: FC = () => {
 
     return (
         <Header>
-            <Logo />
+            <Logo role="img" />
             <Navigation activeRoute={activeRoute} changeActiveItem={setActiveRoute} items={allRoutes} />
             <Button $hoverRight $commonStyles={ButtonCss} text="Бронированиe" />
         </Header>

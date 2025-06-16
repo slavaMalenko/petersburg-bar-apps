@@ -1,6 +1,6 @@
 import type { ReactNode, FC } from 'react';
 
-import { animationBlock, animationVariants } from '@petersburg-bar/common';
+import { animationBlock, animationVariants } from '@petersburg-bar/ui';;
 
 import { Container, InfoBlock, InfoBlockDescription, InfoBlockDivider, InfoBlockTitle } from './styles';
 

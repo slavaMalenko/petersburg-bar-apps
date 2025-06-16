@@ -1,6 +1,7 @@
 import type { FC } from 'react';
+import './index.css';
 
-import { Container } from '@petersburg-bar/common';
+import { Container } from '@petersburg-bar/ui';
 import { BrowserRouter } from 'react-router-dom';
 import { Reset } from 'styled-reset';
 

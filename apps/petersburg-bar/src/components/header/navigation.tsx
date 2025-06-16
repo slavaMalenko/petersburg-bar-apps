@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { Navigation, NavigationItem } from './styles';
 
 import type { AllRoutes } from '../../routes';
@@ -11,11 +13,12 @@ interface Navigation {
 }
 
 const NavigationComponent: FC<Navigation> = ({ items, activeRoute, changeActiveItem }) => (
-    <Navigation>
-        {items.map(({ name, link }) => (
+    <Navigation role="navigation">
+        {items.map(({ name, link }, index) => (
             <NavigationItem
-                key={`${name}${link}`}
+                key={`${name}${link}${index}`}
                 $isActiveLink={activeRoute === link}
+                as={Link}
                 to={link}
                 onClick={() => changeActiveItem(link)}
             >

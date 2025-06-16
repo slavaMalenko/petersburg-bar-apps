@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { MButton, MTitle, MWhitePlate, Title, animationVariants } from '@petersburg-bar/common';
+import { MButton, MTitle, MWhitePlate, Title, animationVariants } from '@petersburg-bar/ui';;
 import { useNavigate } from 'react-router-dom';
 import { css } from 'styled-components';
 

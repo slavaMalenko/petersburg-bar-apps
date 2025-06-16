@@ -1,12 +1,13 @@
 import { memo, type FC } from 'react';
 
-import { animationVariants, flexStyles } from '@petersburg-bar/common';
+import { animationVariants, flexStyles } from '@petersburg-bar/ui';;
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+const Rectangle = new URL('./assets/rectangle.png', import.meta.url).href;
+
 import { MDescription } from './description';
-import Rectangle from './img/rectangle.png';
 import { Img } from './styles';
 
 const { displayFlex, justifySpaceBetween } = flexStyles;

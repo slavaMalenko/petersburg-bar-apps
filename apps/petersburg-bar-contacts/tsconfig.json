@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "resolveJsonModule": true,
+        "strict": true,
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,
@@ -9,5 +11,5 @@
         "jsx": "react-jsx",
         "lib": ["es5", "es6", "es7", "dom"]
     },
-    "include": ["src/**/*", "index.d.ts"]
+    "include": ["src/**/*", "index.d.ts", "vite.config.mjs", "jest.config.js"]
 }
